@@ -1,26 +1,20 @@
-package BFS;
+package 연습;
 
 import java.io.*;
 import java.util.*;
 
-public class B_16968_차량번호판 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String strformat = br.readLine();
-        char prev = ' ';
-        int dup = 0;
-        int answer = 1;
-        for(char c:strformat.toCharArray()) {
-            if (prev == c)
-                dup = 1;
-            else
-                dup = 0;
-            if (c == 'c')
-                answer *= (26 - dup);
-            else
-                answer *= (10 - dup);
-            prev = c;
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        System.out.println(String.valueOf(B - A - 1));
+        for(int i = 0; i < B - A - 1; i++) {
+            System.out.print(String.valueOf(A + i + 1)+ " ");
         }
-        System.out.println(answer);
     }
 }
+
